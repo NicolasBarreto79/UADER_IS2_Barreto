@@ -20,10 +20,20 @@ def factorial(num):
             num -= 1
         return fact 
 
+def calcular_factoriales(desde, hasta):
+    for num in range(desde, hasta + 1):
+        print(f"Factorial {num}! es {factorial(num)}")
+
 if len(sys.argv) < 2:
-    num = int(input("Debe informar un número: "))
+    rango = input("Debe informar un rango (desde-hasta): ")
 else:
-    num = int(sys.argv[1])
+    rango = sys.argv[1]
 
-print("Factorial", num, "! es", factorial(num))
-
+try:
+    desde, hasta = map(int, rango.split('-'))
+    if desde > hasta:
+        print("El valor 'desde' debe ser menor o igual al valor 'hasta'")
+    else:
+        calcular_factoriales(desde, hasta)
+except ValueError:
+    print("Formato inválido. Use el formato desde-hasta (ej. 4-8)")
