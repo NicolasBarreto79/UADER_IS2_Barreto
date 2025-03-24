@@ -47,3 +47,5 @@ try:
         print("Formato inválido. Use el formato desde-hasta (ej. 4-8, -10, 5-)")
 except ValueError:
     print("Formato inválido. Use el formato desde-hasta (ej. 4-8, -10, 5-)")
+
+#comentario de prueba 
